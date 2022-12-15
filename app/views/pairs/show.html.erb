@@ -1,0 +1,27 @@
+<%= render @pair %>
+<%= @price %>
+<br>
+<p style="color: red"><%= notice %></p>
+<% if @user != nil %>
+  <%= form_tag currency_pair_path(@currency, @pair), method: :post do %>
+    <div>
+      <%= label_tag "Buy #{@pair.coin1}", nil, style: "display: block" %>
+      <%= text_field_tag 'pair[amount]', nil, placeholder: "amount" %>
+    </div>
+    <div>
+      <%= submit_tag "Buy", style: "display: block" %>
+    </div>
+    <br>
+  <% end %>
+
+  <%= form_tag currency_pair_path(@currency, @pair), method: :patch do %>
+    <div>
+      <%= label_tag "Sell #{@pair.coin1}", nil, style: "display: block" %>
+      <%= text_field_tag 'pair[amount]', nil, placeholder: "amount" %>
+    </div>
+    <div>
+      <%= submit_tag "Sell", style: "display: block" %>
+    </div>
+    <br>
+  <% end %>
+<% end %>

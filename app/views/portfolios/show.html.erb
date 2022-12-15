@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Portfolio</h1>
+
+<% if @portfolio.user_id == @user.id %>
+  <% if @portfolio.private %>
+    <%= button_to "Make Public", portfolio_path(@portfolio), method: :patch %>
+  <% else %>
+    <%= button_to "Make Private", portfolio_path(@portfolio), method: :patch %>
+  <% end %>
+<% end %>
+<p>
+  <%= link_to "Back to account", user_path %>
+</p>
+<p>
+  <%= link_to "Deals", portfolio_deals_path(@portfolio) %>
+</p>
+<h3>Profit:</h3> <%= @profit.round(2) %>%
+
+<h2>Coins</h2>
+<div id="portfolios">
+  <% @deals.each do |deal| %>
+    <p>
+      <%= deal.keys[0] %> : <%= deal[deal.keys[0]] %>
+    </p>
+  <% end %>
+</div>

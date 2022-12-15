@@ -1,0 +1,37 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, placeholder: "name" %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email,placeholder: "email" %>
+  </div>
+
+  <div>
+    <%= form.label :password, style: "display: block" %>
+    <%= form.password_field :password, placeholder: "password" %>
+  </div>
+
+  <div>
+    <%= form.label :confirm_password, style: "display: block" %>
+    <%= form.password_field :password_confirmation,placeholder: "password" %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.submit "Create Account"%>
+  </div>
+<% end %>

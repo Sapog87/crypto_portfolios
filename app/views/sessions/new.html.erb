@@ -1,0 +1,22 @@
+<h1>Login</h1>
+
+<%= form_tag sessions_path do %>
+  <div>
+    <%= label_tag "Email", nil, style: "display: block" %>
+    <%= text_field_tag :email, nil, placeholder: "email" %>
+  </div>
+  <div>
+    <%= label_tag "Password", nil, style: "display: block" %>
+    <%= password_field_tag :password, nil, placeholder: "password" %>
+  </div>
+  <br>
+  <div>
+    <%= submit_tag "Log In", style: "display: block" %>
+  </div>
+<% end %>
+
+<br>
+
+<%= button_to 'Don\'t have an account', new_user_path, method: :get %>
+
+<br>

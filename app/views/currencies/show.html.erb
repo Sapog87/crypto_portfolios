@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Pairs: <%= @currency.symbol %></h1>
+
+<div class="w-1/2 mx-auto">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+  <div id="pairs" class="min-w-full">
+    <div id="pairs">
+      <% @pairs.each do |pair| %>
+        <%= link_to currency_pair_path(@currency, pair) do %>
+          <div>
+            <%= render pair %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div id="pager" class="min-w-full my-8 flex justify-between">
+    <div>
+      <% if @pagy.prev %>
+        <%= link_to "< Previous page", currency_path(page: @pagy.prev), class: "rounded py-3 px-5 bg-gray-600 text-white block hover:bg-gray-800" %>
+      <% end %>
+    </div>
+    <div class="text-right">
+      <% if @pagy.next %>
+        <%= link_to "Next page >", currency_path(page: @pagy.next), class: "rounded py-3 px-5 bg-gray-600 text-white block hover:bg-gray-800" %>
+      <% end %>
+    </div>
+  </div>
+</div>

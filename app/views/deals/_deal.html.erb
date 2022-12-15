@@ -1,0 +1,17 @@
+<div id="<%= dom_id deal %>" , style="background-color: #BBBBBB">
+  <p>
+    <strong>Amount:</strong>
+    <%= deal.amount %>
+  </p>
+
+  <p>
+    <strong>Currency:</strong>
+    <%= Currency.find(deal.currency_id).symbol %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= deal.created_at %>
+  </p>
+
+</div>

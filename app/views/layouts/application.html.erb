@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CryptocurrencyPortfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+
+<body>
+<%= link_to "Currencies", currencies_path %>
+
+<% unless @user.nil? or @user.id.nil? %>
+  <%= link_to "Portfolio", portfolios_path %>
+  <%= link_to "Profile", users_path %>
+<% end %>
+
+
+<%= yield %>
+
+<br>
+
+<div style="position:absolute; top:15px; right:10px;">
+  <% if logged_in? %>
+    <%= button_to "Logout", "/sessions", method: :delete %>
+  <% else %>
+    <%= button_to "Login", "/sessions/new", method: :get %>
+  <% end %>
+</div>
+
+</body>
+</html>
