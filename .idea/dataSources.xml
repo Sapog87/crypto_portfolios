@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="crypto_portfolios: test" uuid="1241dcb9-2603-42de-b6e0-903f1fd9edc5">
+    <data-source source="LOCAL" name="crypto_portfolios: development" uuid="40730f00-0828-4b2b-912a-808bac96ec26">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/crypto_portfolios_development</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="crypto_portfolios: test" uuid="dfeb1251-ae46-49cb-9638-5c38f474f31b">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
@@ -10,22 +19,13 @@
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/crypto_portfolios_test</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="crypto_portfolios: production" uuid="3f4c624c-fb7b-4817-ab6c-5016a444df2d">
+    <data-source source="LOCAL" name="crypto_portfolios: production" uuid="6f3506e8-fceb-4325-90e3-3632a0e18bab">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/config/database.yml</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/crypto_portfolios_production</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="crypto_portfolios: development" uuid="d8f973de-e217-4358-8aea-73316d1adebd">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/crypto_portfolios_development</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

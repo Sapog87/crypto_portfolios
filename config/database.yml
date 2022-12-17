@@ -82,5 +82,7 @@ test:
 production:
   <<: *default
   database: crypto_portfolios_production
-  username: crypto_portfolios
-  password: <%= ENV["CRYPTO_PORTFOLIOS_DATABASE_PASSWORD"] %>
+  username: postgres
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  url: postgresql://127.0.0.1:5432/crypto_portfolios_production
+

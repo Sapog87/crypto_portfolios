@@ -4,7 +4,6 @@ class CurrenciesController < ApplicationController
   before_action :set_currency, only: %i[ show ]
 
   def index
-    p params
     if params[:search].nil?
       @pagy, @currencies = pagy(Currency, items: 10)
     else
