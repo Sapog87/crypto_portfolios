@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_072755) do
   end
 
   create_table "deals", force: :cascade do |t|
-    t.float "amount"
+    t.decimal "amount", precision: 20, scale: 8
     t.bigint "portfolio_id", null: false
     t.bigint "currency_id", null: false
     t.datetime "created_at", null: false

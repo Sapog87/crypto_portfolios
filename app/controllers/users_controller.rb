@@ -17,14 +17,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.save
-      @portfolio = Portfolio.create(private: true, user_id: @user.id)
-      @currency = Currency.find_by symbol: "USDT"
-      Deal.create(amount: 1000000, portfolio_id: @portfolio.id, currency_id: @currency.id)
-      session[:user_id] = @user.id
-      redirect_to @user, notice: "Account was successfully created."
-    else
-      render :new, status: :unprocessable_entity
+    ActiveRecord::Base.transaction do
+      if @user.save
+        @portfolio = Portfolio.create(private: true, user_id: @user.id)
+        @currency = Currency.find_by symbol: "USDT"
+        Deal.create(amount: 1000000, portfolio_id: @portfolio.id, currency_id: @currency.id)
+        session[:user_id] = @user.id
+        redirect_to @user, notice: "Account was successfully created."
+      else
+        render new_user_path, status: :unprocessable_entity
+      end
     end
   end
 

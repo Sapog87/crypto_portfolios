@@ -29,11 +29,14 @@ class PairsController < ApplicationController
   end
 
   def sell
+    port =
     balance = Deal.where(portfolio_id: @portfolio.id, currency_id: @coin1.id).sum(:amount)
     value = pair_params["amount"].to_f
     if value <= 0 or balance >= value
-      Deal.create(amount: -value, portfolio_id: @portfolio.id, currency_id: @coin1.id)
-      Deal.create(amount: value * @price.to_f, portfolio_id: @portfolio.id, currency_id: @coin2.id)
+      Deal.transaction do
+        p Deal.create(amount: -value, portfolio_id: @portfolio.id, currency_id: @coin1.id)
+        p Deal.create(amount: value * @price.to_f, portfolio_id: @portfolio.id, currency_id: @coin2.id)
+      end
       redirect_to portfolios_path
     else
       # redirect_to "/currencies/" + params[:currency_id].to_s + "/pairs/" + params[:id].to_s, notice: "Wrong amount"
