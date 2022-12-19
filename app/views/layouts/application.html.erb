@@ -6,11 +6,21 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
+  <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css' %>
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
 </head>
 
-<body>
-<%= link_to "Currencies", currencies_path %>
+<body style="background-color: #EFEFEF">
+
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-mb-4 mb-3 bg-white border-bottom">
+  <h5 class="my-0 mr-md-auto text-uppercase" style="color: #252428; font-family: Impact;">Crypto currency portfolio</h5>
+  <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+    <span class="text-uppercase text-dark" style="color: #252428; font-family: Impact;"><%= link_to "Currencies", currencies_path%></span>
+  </nav>
+</div>
+
 
 <% unless @user.nil? or @user.id.nil? %>
   <%= link_to "Portfolio", portfolios_path %>
@@ -18,15 +28,16 @@
 <% end %>
 
 
-<%= yield %>
-
+<div class="container"
+  <%= yield %>
+</div>
 <br>
 
-<div style="position:absolute; top:15px; right:10px;">
+<div style="position:absolute; top:80px; right:20px;">
   <% if logged_in? %>
     <%= button_to "Logout", "/sessions", method: :delete %>
   <% else %>
-    <%= button_to "Login", "/sessions/new", method: :get %>
+     <%= button_to "Login", "/sessions/new", method: :get %>
   <% end %>
 </div>
 
