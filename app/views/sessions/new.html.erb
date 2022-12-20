@@ -8,27 +8,25 @@
 
 
 <%= form_tag sessions_path do %>
-  <div style=" margin-left: 10%; font-family: 'Times New Roman'">
-    <%= label_tag "Email", nil, style: "display: block" %>
-    <%= text_field_tag :email, nil, placeholder: "email" %>
+                <div style="font-family: Arial">
+                  <label for="email">Email:</label>
+                  <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
   </div>
     <br>
-  <div style="margin-left: 10%; font-family: 'Times New Roman'">
-    <%= label_tag "Password", nil, style: "display: block" %>
-    <%= password_field_tag :password, nil, placeholder: "password" %>
+  <div style="font-family: Arial">
+    <label for="password">Password:</label>
+    <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="password">
   </div>
   <br>
-  <div style="margin-left: 10%; color: #252428; font-family: 'Times New Roman'">
+  <div class="mx-8" style="margin-left: 43%; color: #252428; font-family: Arial">
     <%= submit_tag "LOG IN", style: "display: block" %>
   </div>
 <% end %>
 
 <br>
-  <div style="margin-left: 10%; color: #252428; font-family: 'Times New Roman'">
+  <div class="mx-8" style="margin-left: 33%; color: #252428; font-family: Arial; border-color: #666666">
 <%= button_to 'Don\'t have an account', new_user_path, method: :get %>
   </div>
-
-
 <br>
             </div>
           </div>

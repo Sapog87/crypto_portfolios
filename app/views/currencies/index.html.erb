@@ -2,10 +2,12 @@
 
 <h1>Currencies</h1>
 
-<div>
+<div style="width: 50%">
   <%= form_tag currencies_path, method: :get do %>
-    <%= text_field_tag 'search', nil, placeholder: "search" %>
+    <input name="search" type="search" class="form-control" id="floatingSearch" placeholder="search">
+    <div style="margin-left: 103%;">
     <%= submit_tag "search" %>
+    </div>
   <% end %>
 </div>
 
@@ -13,7 +15,7 @@
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
-  <div id="cards" class="min-w-full">
+  <div style = "margin-top: 3%; width: 0%" id="cards" class="min-w-full">
     <div id="currencies">
       <% @currencies.each do |currency| %>
         <%= link_to currency_path(currency) do %>
