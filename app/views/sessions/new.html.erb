@@ -1,36 +1,36 @@
 <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-    <div class="container h-100 " style="margin-top: 10%">
-      <div class="row d-flex justify-content-center align-items-center h-100" >
-        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div class="card" style="border-radius: 15px;">
-            <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5" style="color: #252428; font-family: Impact">Login</h2>
+  <div class="container h-100 " style="margin-top: 10%">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-5">
+            <h2 class="text-uppercase text-center mb-5" style="color: #252428; font-family: Impact">Login</h2>
+            <%= form_tag sessions_path do %>
+              <div style="font-family: Arial">
+                <label for="email">Email:</label>
+                <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              </div>
 
+              <br>
 
-<%= form_tag sessions_path do %>
-                <div style="font-family: Arial">
-                  <label for="email">Email:</label>
-                  <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-  </div>
-    <br>
-  <div style="font-family: Arial">
-    <label for="password">Password:</label>
-    <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="password">
-  </div>
-  <br>
-  <div class="mx-8" style="margin-left: 43%; color: #252428; font-family: Arial">
-    <%= submit_tag "LOG IN", style: "display: block" %>
-  </div>
-<% end %>
+              <div style="font-family: Arial">
+                <label for="password">Password:</label>
+                <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="password">
+              </div>
+              <br>
+              <div class="mx-8" style="margin-left: 43%; color: #252428; font-family: Arial">
+                <%= submit_tag "LOG IN", style: "display: block" %>
+              </div>
+            <% end %>
 
-<br>
-  <div class="mx-8" style="margin-left: 33%; color: #252428; font-family: Arial; border-color: #666666">
-<%= button_to 'Don\'t have an account', new_user_path, method: :get %>
-  </div>
-<br>
+            <br>
+            <div class="mx-8" style="margin-left: 33%; color: #252428; font-family: Arial; border-color: #666666">
+              <%= button_to 'Don\'t have an account', new_user_path, method: :get %>
             </div>
+            <br>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
