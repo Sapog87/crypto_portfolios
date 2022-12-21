@@ -2,10 +2,10 @@
 
 one:
   private: false
-  money: 9.99
+  #money: 9.99
   user: one
 
 two:
   private: false
-  money: 9.99
+  #money: 9.99
   user: two

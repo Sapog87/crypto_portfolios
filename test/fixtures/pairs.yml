@@ -2,6 +2,10 @@
 
 one:
   pair: MyString
+  coin1: one
+  coin2: two
 
 two:
-  pair: MyString
+  pair: MyString  
+  coin1: one
+  coin2: two
