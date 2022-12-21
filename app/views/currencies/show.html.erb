@@ -1,22 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Pairs: <%= @currency.symbol %></h1>
+<h1 class="text-uppercase" style="font-family: Impact; margin-top: 3%">Pairs: <%= @currency.symbol %></h1>
 
 <div class="w-1/2 mx-auto">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
-  <div style="width: 0%" id="pairs" class="min-w-full">
-    <div id="pairs">
+  <div style="width: 0%; margin-top: 2%" id="pairs" class="min-w-full">
+    <div style="color: green" id="pairs">
       <% @pairs.each do |pair| %>
-        <%= link_to currency_pair_path(@currency, pair) do %>
-          <div>
+        <%= link_to currency_pair_path(@currency, pair), class: "btn" do %>
+          <div  >
             <%= render pair %>
           </div>
         <% end %>
       <% end %>
     </div>
   </div>
+
   <div id="pager" class="min-w-full my-8 flex justify-between">
     <div>
       <% if @pagy.prev %>

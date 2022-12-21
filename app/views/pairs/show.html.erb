@@ -1,32 +1,35 @@
-<div style="margin-left: 2%">
-<%= render @pair %>
-<%= @price %>
+<div style="margin-top: 2%; font-family: Arial">
+  <%= render @pair %>
+  <div style="color: green"> <%= @price %></div>
 </div>
+
+
+
 <br>
 <p style="color: red"><%= notice %></p>
 <% if @user != nil %>
-  <div style="margin-left: 3%">
-  <%= form_tag currency_pair_path(@currency, @pair), method: :post do %>
-    <div style="width: 20%" >
-      <%= label_tag "Buy #{@pair.coin1}", nil, style: "display: block"%>
-      <%= text_field_tag 'pair[amount]', nil, placeholder: "amount", class: "form-control" %>
-    </div>
-    <div style="margin-top: 0.5%">
-      <%= submit_tag "Buy", style: "display: block", class: "btn btn-outline-dark btn-sm" %>
-    </div>
+  <div class="text-uppercase" style="margin-top: 2%; font-family: Arial">
+    <%= form_tag currency_pair_path(@currency, @pair), method: :post do %>
+      <div style="width: 20%">
+        <%= label_tag "Buy #{@pair.coin1}", nil, style: "display: block" %>
+        <%= text_field_tag 'pair[amount]', nil, placeholder: "amount", class: "form-control" %>
       </div>
-    <br>
-  <% end %>
-<div style="margin-left: 3%">
-  <%= form_tag currency_pair_path(@currency, @pair), method: :patch do %>
-    <div style="width: 20%">
-      <%= label_tag "Sell #{@pair.coin1}", nil, style: "display: block" %>
-      <%= text_field_tag 'pair[amount]', nil, placeholder: "amount", class: "form-control" %>
-    </div>
-    <div style="margin-top: 0.5%">
-      <%= submit_tag "Sell", style: "display: block" , class: "btn btn-outline-dark btn-sm"%>
-    </div>
-    </div>
-    <br>
-  <% end %>
+      <div style="margin-top: 0.5%">
+        <%= submit_tag "BUY", style: "display: block", class: "btn btn-outline-dark btn-sm" %>
+      </div>
+  </div>
+      <br>
+    <% end %>
+    <div class="text-uppercase" style="margin-top: 2%; font-family: Arial">
+      <%= form_tag currency_pair_path(@currency, @pair), method: :patch do %>
+        <div style="width: 20%">
+          <%= label_tag "Sell #{@pair.coin1}", nil, style: "display: block" %>
+          <%= text_field_tag 'pair[amount]', nil, placeholder: "amount", class: "form-control" %>
+        </div>
+        <div style="margin-top: 0.5%">
+          <%= submit_tag "SELL", style: "display: block", class: "btn btn-outline-dark btn-sm" %>
+        </div>
+        </div>
+        <br>
+      <% end %>
 <% end %>

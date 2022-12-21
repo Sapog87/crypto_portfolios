@@ -1,16 +1,16 @@
 <div id="<%= dom_id deal %>" , style="background-color: #BBBBBB">
   <p>
-    <strong>Amount:</strong>
+    <strong class="ms-2" style="font-family: Arial">Amount:</strong>
     <%= deal.amount %>
   </p>
 
   <p>
-    <strong>Currency:</strong>
+    <strong class="ms-2" style="font-family: Arial">Currency:</strong>
     <%= Currency.find(deal.currency_id).symbol %>
   </p>
 
   <p>
-    <strong>Date:</strong>
+    <strong class="ms-2" style="font-family: Arial">Date:</strong>
     <%= deal.created_at %>
   </p>
 
