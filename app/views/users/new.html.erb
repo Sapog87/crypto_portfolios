@@ -9,12 +9,14 @@
 <%= render "form", user: @user %>
 
 
-            <div class="text-center mb-5" style="color: #252428; font-family: Arial">
-<%= button_to 'Already have an account', new_session_path, method: :get %>
-            </div>
+            <div class="mx-8" style="margin-left: 31%; font-family: Arial; border-color: #666666">
+              <form class="button_to" method="get" action="/sessions/new" >
+                <input type="submit" value="Already have an account" class="btn btn-outline-dark">
+              </form>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>

@@ -10,22 +10,22 @@
                 <label for="email">Email:</label>
                 <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
               </div>
-
               <br>
-
               <div style="font-family: Arial">
                 <label for="password">Password:</label>
                 <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="password">
               </div>
               <br>
-              <div class="mx-8" style="margin-left: 43%; color: #252428; font-family: Arial">
-                <%= submit_tag "LOG IN", style: "display: block" %>
+              <div class="mx-8" style="margin-left: 43%; color: #252428; font-family: Arial; font-family: Arial; border-color: #666666">
+                <input name="commit" data-disable-with="LOG IN" type="submit" value="LOG IN" class="btn btn-outline-dark" />
               </div>
             <% end %>
 
             <br>
-            <div class="mx-8" style="margin-left: 33%; color: #252428; font-family: Arial; border-color: #666666">
-              <%= button_to 'Don\'t have an account', new_user_path, method: :get %>
+            <div class="mx-8" style="margin-left: 33%; font-family: Arial; border-color: #666666">
+            <form class="button_to" method="get" action="/users/new" >
+              <input type="submit" value="Don't have an account" class="btn btn-outline-dark">
+             </form>
             </div>
             <br>
           </div>

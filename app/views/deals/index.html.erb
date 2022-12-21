@@ -2,7 +2,7 @@
 
 <h1>Deals</h1>
 
-<%= link_to "Back to portfolio", portfolio_path(@portfolio) %>
+<%= link_to "Back to portfolio", portfolio_path(@portfolio), class: "btn btn-outline-dark btn-sm" %>
 
 <div id="deals">
   <% @deals.each do |deal| %>

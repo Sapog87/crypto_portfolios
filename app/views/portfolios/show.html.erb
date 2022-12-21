@@ -4,17 +4,12 @@
 
 <% if @portfolio.user_id == @user.id %>
   <% if @portfolio.private %>
-    <%= button_to "Make Public", portfolio_path(@portfolio), method: :patch %>
+    <%= button_to "Make Public", portfolio_path(@portfolio), method: :patch, class: "btn btn-outline-dark btn-sm" %>
   <% else %>
-    <%= button_to "Make Private", portfolio_path(@portfolio), method: :patch %>
+    <%= button_to "Make Private", portfolio_path(@portfolio), method: :patch, class: "btn btn-outline-dark btn-sm" %>
   <% end %>
 <% end %>
-<p>
-  <%= link_to "Back to account", user_path %>
-</p>
-<p>
-  <%= link_to "Deals", portfolio_deals_path(@portfolio) %>
-</p>
+
 <h3>Profit:</h3>
 <% if @profit.round(2).abs > 0.0 %>
   <%= @profit.round(2) %>%
@@ -29,4 +24,15 @@
       <%= deal.keys[0] %> : <%= deal[deal.keys[0]].round(8) %>
     </p>
   <% end %>
+</div>
+
+<div style="">
+  <p>
+    <%= link_to "Back to account", user_path, class: "btn btn-outline-dark btn-sm"  %>
+  </p>
+</div>
+<div>
+  <p>
+    <%= link_to "Deals", portfolio_deals_path(@portfolio), class: "btn btn-outline-dark btn-sm" %>
+  </p>
 </div>

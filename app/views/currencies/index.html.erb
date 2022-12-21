@@ -5,8 +5,8 @@
 <div style="width: 50%">
   <%= form_tag currencies_path, method: :get do %>
     <input name="search" type="search" class="form-control" id="floatingSearch" placeholder="search">
-    <div style="margin-left: 103%;">
-    <%= submit_tag "search" %>
+    <div style="margin-left: 105%; margin-top: -6%; width: 100%">
+      <input name="commit" data-disable-with="Search" type="submit" value="Search" class="btn btn-outline-dark" />
     </div>
   <% end %>
 </div>
@@ -18,7 +18,7 @@
   <div style = "margin-top: 3%; width: 0%" id="cards" class="min-w-full">
     <div id="currencies">
       <% @currencies.each do |currency| %>
-        <%= link_to currency_path(currency) do %>
+        <%= link_to currency_path(currency), class: "btn" do %>
           <div>
             <%= render currency %>
           </div>
@@ -26,15 +26,15 @@
       <% end %>
     </div>
   </div>
-  <div id="pager" class="min-w-full my-8 flex justify-between">
+  <div id="pager" class="pagination" role="navigation" aria-label="Pagination">
     <div>
       <% if @pagy.prev %>
-        <%= link_to "< Previous page", currencies_path(page: @pagy.prev, search: params[:search]), class: "rounded py-3 px-5 bg-gray-600 text-white block hover:bg-gray-800" %>
+        <%= link_to "< Previous page", currencies_path(page: @pagy.prev, search: params[:search]), class: "btn btn-outline-dark btn-sm" %>
       <% end %>
     </div>
-    <div class="text-right">
+    <div class="text-right" style="margin-left: 0.5%">
       <% if @pagy.next %>
-        <%= link_to "Next page >", currencies_path(page: @pagy.next, search: params[:search]), class: "rounded py-3 px-5 bg-gray-600 text-white block hover:bg-gray-800" %>
+        <%= link_to "Next page >", currencies_path(page: @pagy.next, search: params[:search]), class: "btn btn-outline-dark btn-sm" %>
       <% end %>
     </div>
   </div>
