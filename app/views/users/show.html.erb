@@ -1,9 +1,10 @@
 <p style="color: green"><%= notice %></p>
 <p style="color: red"><%= alert %></p>
 
-<h1>Profile</h1>
+<h1 style="font-family: Impact">Profile</h1>
 
 <%= render @user %>
+
 
 <% if !@portfolio.private or current_user == @user %>
   <%= link_to "Portfolio", portfolio_path(@user), class: "btn btn-outline-dark btn-sm" %>

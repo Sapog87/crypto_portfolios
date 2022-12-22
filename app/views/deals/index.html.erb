@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Deals</h1>
+<h1 class="text-uppercase" style="font-family: Impact">Deals</h1>
 
-<%= link_to "Back to portfolio", portfolio_path(@portfolio), class: "btn btn-outline-dark btn-sm" %>
+<%= link_to "Back to portfolio", portfolio_path(@portfolio), class: "btn btn-outline-dark btn-sm mt-2 mb-3" %>
 
 <div id="deals">
   <% @deals.each do |deal| %>

@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Portfolio</h1>
+<h1 class="text-uppercase" style="font-family: Impact">Portfolio</h1>
 
 <% if @portfolio.user_id == @user.id %>
   <% if @portfolio.private %>
@@ -10,14 +10,14 @@
   <% end %>
 <% end %>
 
-<h3>Profit:</h3>
+<h3 class="text-uppercase mt-3" style="font-family: Impact">Profit:</h3>
 <% if @profit.round(2).abs > 0.0 %>
   <%= @profit.round(2) %>%
 <% else %>
   0.0%
 <% end %>
 
-<h2>Coins</h2>
+<h2 class="text-uppercase mt-2" style="font-family: Impact">Coins</h2>
 <div id="portfolios">
   <% @deals.each do |deal| %>
     <p>
@@ -26,7 +26,7 @@
   <% end %>
 </div>
 
-<div style="">
+<div>
   <p>
     <%= link_to "Back to account", user_path, class: "btn btn-outline-dark btn-sm"  %>
   </p>
